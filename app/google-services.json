@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "924967645164",
+    "firebase_url": "https://restaurantapp-a2cbe.firebaseio.com",
+    "project_id": "restaurantapp-a2cbe",
+    "storage_bucket": "restaurantapp-a2cbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924967645164:android:207a24c1ddfb9120a55ac9",
+        "android_client_info": {
+          "package_name": "com.facundojaton.restaurantapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "924967645164-5808n5r8rsevo03c09dfdorm8p7mdinh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.facundojaton.restaurantapp",
+            "certificate_hash": "173a8a5981037e7e4464807761334b492d92a775"
+          }
+        },
+        {
+          "client_id": "924967645164-m6v01s5151rl2oh44tn7tkt0h31ipjep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDh5OJNi4-3R1CDMc1KYoO0e15BzoUvGBk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "924967645164-m6v01s5151rl2oh44tn7tkt0h31ipjep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

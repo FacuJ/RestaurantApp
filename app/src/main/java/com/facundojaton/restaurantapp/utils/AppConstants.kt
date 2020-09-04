@@ -1,0 +1,8 @@
+package com.autosolve.yasale.ui.utils
+
+
+object AppConstants {
+    const val DEVICE_TYPE = "android"
+    const val EMPTY_STRING = ""
+    const val MOBILE = "MOBILE"
+}
