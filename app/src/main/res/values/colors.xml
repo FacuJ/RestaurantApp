@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">@color/green_600</color>
     <color name="colorPrimaryDark">@color/green_900</color>
-    <color name="colorAccent">@color/purple_A200</color>
+    <color name="colorAccent">@color/purple_500</color>
 
     <!--
         Google Material Design Color Palette for Android http://www.google.com/design/spec/style/color.html#color-ui-color-palette
