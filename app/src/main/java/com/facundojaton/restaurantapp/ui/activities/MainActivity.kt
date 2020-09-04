@@ -1,4 +1,4 @@
-package com.facundojaton.restaurantapp
+package com.facundojaton.restaurantapp.ui.activities
 
 import android.content.Context
 import android.content.Intent
@@ -6,6 +6,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
+import com.facundojaton.restaurantapp.R
+import com.facundojaton.restaurantapp.controllers.UserController
+import com.facundojaton.restaurantapp.models.TableOrder
+import com.facundojaton.restaurantapp.models.User
+import com.facundojaton.restaurantapp.mvp.presenters.MainPresenter
+import com.facundojaton.restaurantapp.mvp.views.MainView
+import com.facundojaton.restaurantapp.ui.adapters.TableOrdersListAdapter
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity(), MainView {
     companion object {
@@ -24,13 +32,13 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         setMainData()
         mainPresenter = MainPresenter(this)
         mainPresenter.onAttach(this)
         user = UserController.currentUser
         tableOrdersListAdapter = TableOrdersListAdapter()
-        rvTableOrders?.adapter = tableOrdersListAdapter
+        /*rvTableOrders?.adapter = tableOrdersListAdapter*/
         showProgressBar()
         user?.id?.let {
             mainPresenter.getTableOrders(it)
@@ -44,7 +52,7 @@ class MainActivity : AppCompatActivity(), MainView {
                 user?.id?.let {
                     mainPresenter.firebaseLogout(it)
                 }
-                LoginActivity.start(this)
+//                LoginActivity.start(this)
                 finish()
                 dialog.dismiss()
             }
@@ -53,38 +61,39 @@ class MainActivity : AppCompatActivity(), MainView {
             }
             .create()
 
-        ivLogout?.setOnClickListener { tvLogout.performClick() }
+       /* ivLogout?.setOnClickListener { tvLogout.performClick() }
         tvLogout?.setOnClickListener {
             logoutDialog?.show()
-        }
+        }*/
 
-        ivNewTableOrder?.setOnClickListener { tvNewTableOrder.performClick() }
+        /*ivNewTableOrder?.setOnClickListener { tvNewTableOrder.performClick() }
         tvNewTableOrder?.setOnClickListener {
             goToTableOrderActivity()
-        }
-        tableOrdersListAdapter?.onSeeDetailsClick = { tableOrder ->
+        }*/
+        /*tableOrdersListAdapter?.onSeeDetailsClick = { tableOrder ->
             SeeTableOrderActivity.startForResult(
                 this,
                 tableOrder,
                 SEE_DETAILS_TABLE_ORDER_REQUEST_CODE
             )
-        }
+        }*/
     }
 
     override fun setMainData() {
-        tvUpdateDateMain?.text = getString(R.string.name_in_brackets, UserController.workingDayConfigs)
+        /*tvUpdateDateMain?.text =
+            getString(R.string.name_in_brackets, UserController.workingDayConfigs)*/
     }
 
 
     override fun onTableOrdersLoaded(tableOrders: ArrayList<TableOrder>) {
-        rvTableOrders?.visibility = View.VISIBLE
-        clEmptyTableOrders?.visibility = View.GONE
+        /*rvTableOrders?.visibility = View.VISIBLE
+        clEmptyTableOrders?.visibility = View.GONE*/
         tableOrdersListAdapter?.setTableOrders(tableOrders)
     }
 
     override fun onEmptyTableOrders() {
-        rvTableOrders?.visibility = View.GONE
-        clEmptyTableOrders?.visibility = View.VISIBLE
+       /* rvTableOrders?.visibility = View.GONE
+        clEmptyTableOrders?.visibility = View.VISIBLE*/
     }
 
     override fun onTableOrderChanged(tableOrder: TableOrder) {
@@ -92,8 +101,8 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun onTableOrderAdded(tableOrder: TableOrder) {
-        rvTableOrders?.visibility = View.VISIBLE
-        clEmptyTableOrders?.visibility = View.GONE
+        /*rvTableOrders?.visibility = View.VISIBLE
+        clEmptyTableOrders?.visibility = View.GONE*/
         tableOrdersListAdapter?.addTableOrder(tableOrder)
     }
 
@@ -105,26 +114,28 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun goToTableOrderActivity() {
-        TableOrderActivity.startForResult(
+       /* TableOrderActivity.startForResult(
             this, tableOrder = TableOrder(), isNew = true,
             requestCode = NEW_TABLE_ORDER_REQUEST_CODE
-        )
+        )*/
     }
 
     override fun showMessage(message: String) {
+        /** using toast from anko **/
         toast(message)
     }
 
     override fun showProgressBar() {
-        progressBar?.visibility = View.VISIBLE
+        /*progressBar?.visibility = View.VISIBLE*/
     }
 
     override fun hideProgressBar() {
-        progressBar?.visibility = View.GONE
+        /*progressBar?.visibility = View.GONE*/
     }
 
     override fun onDestroy() {
         mainPresenter.onDetach()
         super.onDestroy()
     }
+
 }

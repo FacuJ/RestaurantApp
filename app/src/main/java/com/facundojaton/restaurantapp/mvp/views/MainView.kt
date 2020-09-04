@@ -1,8 +1,7 @@
 package com.facundojaton.restaurantapp.mvp.views
 
-import com.autosolve.yasale.models.TableOrder
-import com.autosolve.yasale.mvp.base.view.MVPView
 import com.facundojaton.restaurantapp.models.TableOrder
+import com.facundojaton.restaurantapp.mvp.base.view.MVPView
 
 interface MainView : MVPView {
     fun onTableOrdersLoaded(tableOrders: ArrayList<TableOrder>)

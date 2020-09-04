@@ -1,4 +1,4 @@
-package com.autosolve.yasale.ui.utils
+package com.facundojaton.restaurantapp.utils
 
 
 object AppConstants {

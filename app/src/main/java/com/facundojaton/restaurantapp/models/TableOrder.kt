@@ -1,7 +1,7 @@
 package com.facundojaton.restaurantapp.models
 
-import com.autosolve.yasale.controllers.UserController
-import com.autosolve.yasale.ui.utils.AppConstants
+import com.facundojaton.restaurantapp.controllers.UserController
+import com.facundojaton.restaurantapp.utils.AppConstants
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*

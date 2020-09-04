@@ -1,4 +1,4 @@
-package com.autosolve.yasale.mvp.base.view
+package com.facundojaton.restaurantapp.mvp.base.view
 
 
 interface MVPView {

@@ -1,6 +1,6 @@
-package com.autosolve.yasale.mvp.base.presenter
+package com.facundojaton.restaurantapp.mvp.base.presenter
 
-import com.autosolve.yasale.mvp.base.view.MVPView
+import com.facundojaton.restaurantapp.mvp.base.view.MVPView
 
 abstract class BaseMVPPresenter<V : MVPView> :
     MVPPresenter<V> {
